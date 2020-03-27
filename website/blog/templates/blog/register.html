@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+{% load staticfiles %}
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>懿曼博客-注册</title>
+     <link href="{% static 'blog/css/blog_nav.css' %}" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/main.css' %}">
+	<script type="text/javascript" src="{% static 'blog/jquery-1.12.4.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'blog/js/register.js' %}"></script>
+</head>
+<body>
+     <video id="v1" autoplay loop muted>
+         <source src="{% static 'blog/images/blog_video2.mp4' %}" type="video/mp4"  />
+     </video>
+	<div class="register_con">
+		<div class="l_con fl">
+{#			<div id="logo_m"  href="#"><img src="{% static 'blog/images/logo_test.jpeg' %}"><span class="navbar-text">我的博客</span></div>#}
+            <div class="reg_slogan"><a href="{% url 'blog:index' %}">懿曼博客  ·  搏一搏 </a><br/><br/>
+                                     我睡过许多姑娘<br/>却仍旧半生荒凉<br/>
+                                       富家不用买良田<br/>书中自有千钟粟<br/>
+                安居不用架高堂<br/>书中自有黄金屋<br/>出门莫恨无人随<br/>书中车马多如簇<br/>娶妻莫恨无良媒<br/>书中自有颜如玉<br/>男儿若遂平生志<br/>五经勤向窗前读<br/></div>
+			<div class="reg_banner"></div>
+		</div>
+
+		<div class="r_con fr">
+			<div class="reg_title clearfix">
+				<h1>用户注册</h1>
+				<a href="{% url 'blog:login' %}">登录</a>
+			</div>
+			<div class="reg_form clearfix">
+				<form method="post" action="/register_handle">
+                    {% csrf_token %}
+				<ul>
+					<li>
+						<label>用户名:</label>
+						<input type="text" name="user_name" id="user_name">
+						<span class="error_tip">提示信息</span>
+					</li>					
+					<li>
+						<label>密码:</label>
+						<input type="password" name="pwd" id="pwd">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>确认密码:</label>
+						<input type="password" name="cpwd" id="cpwd">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li>
+						<label>邮箱:</label>
+						<input type="text" name="email" id="email">
+						<span class="error_tip">提示信息</span>
+					</li>
+					<li class="agreement">
+						<input type="checkbox" name="allow" id="allow" checked="checked">
+						<label>同意”懿曼博客用户使用协议“</label>
+						<span class="error_tip2">提示信息</span>
+					</li>
+					<li class="reg_sub">
+						<input type="submit" value="注 册" name="">
+					</li>
+				</ul>
+                    {{ errmsg }}
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="footer no-mp">
+		<div class="foot_link">
+			<a href="#">关于我们</a>
+			<span>|</span>
+			<a href="#">联系我们</a>
+			<span>|</span>
+			<a href="#">招聘人才</a>
+			<span>|</span>
+			<a href="#">友情链接</a>		
+		</div>
+		<p>CopyRight © 2019 云南懿曼博客信息技术有限公司 All Rights Reserved</p>
+		<p>电话：010-****888    云ICP备*******8号</p>
+	</div>
+	
+</body>
+</html>
