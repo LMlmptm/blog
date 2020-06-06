@@ -26,7 +26,7 @@ cssselect==1.0.3
 cycler==0.10.0
 dateparser==0.7.2
 decorator==4.4.0
-Django==2.2.8
+Django==2.2.13
 django-appconf==1.0.3
 django-autoslug==1.9.6
 django-contrib-comments==1.9.2
