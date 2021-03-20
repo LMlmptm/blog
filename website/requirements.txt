@@ -64,7 +64,7 @@ itsdangerous==1.1.0
 javascripthon==0.10
 jedi==0.14.0
 jieba==0.39
-Jinja2==2.10.1
+Jinja2==2.11.3
 joblib==0.13.2
 jsonpickle==1.2
 jupyter-echarts-pypkg==0.1.2
